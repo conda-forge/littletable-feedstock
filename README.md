@@ -1,11 +1,11 @@
-About littletable
-=================
+About littletable-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/littletable-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/ptmcg/littletable/
 
 Package license: MIT
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/littletable-feedstock/blob/main/LICENSE.txt)
 
 Summary: Python in-memory ORM database
 
