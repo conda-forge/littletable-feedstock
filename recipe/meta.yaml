@@ -1,5 +1,5 @@
 {% set name = "littletable" %}
-{% set version = "2.1.2" %}
+{% set version = "2.2.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/littletable-{{ version }}.tar.gz
-  sha256: 7f478decaf4acc28cb3be21b64523b1fd5e999bd35ebbb8b50d58d4888b7c7c9
+  sha256: eeefddc28d53d60816eb50b196708899e704fc5bc56c84211677e0cee130b596
 
 build:
   noarch: python
@@ -17,9 +17,16 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6.8
+    - python >=3.9
   run:
-    - python >=3.6.8
+    - python >=3.9
+    
+    # Not listed as required but package check to see if available
+    - numpy
+    - lxml
+    - openpyxl
+    - rich
+    - traits
 
 test:
   source_files:
@@ -28,12 +35,13 @@ test:
     - littletable
   commands:
     - pip check
-    - pytest -vvv --capture=tee-sys -k "not TableImportExportTests and not test_sliced_indexing" ./unit_tests.py
+    - pytest -vvv --capture=tee-sys -k "not test_sliced_indexing and not test_csv_compressed_import and not test_csv_filtered_import and not test_excel_export and not test_excel_import and not test_csv_import_source_info" ./unit_tests.py
   requires:
-    - openpyxl
+    - attrs
     - pip
+    - pydantic
     - pytest
-    - rich
+    - traitlets
 
 about:
   home: https://github.com/ptmcg/littletable/
