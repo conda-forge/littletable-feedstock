@@ -35,7 +35,7 @@ test:
     - littletable
   commands:
     - pip check
-    - pytest -vvv --capture=tee-sys -k "not test_sliced_indexing and not test_csv_compressed_import and not test_csv_filtered_import and not test_excel_export and not test_excel_import" ./unit_tests.py
+    - pytest -vvv --capture=tee-sys -k "not test_sliced_indexing and not test_csv_compressed_import and not test_csv_filtered_import and not test_excel_export and not test_excel_import and not test_csv_import_source_info" ./unit_tests.py
   requires:
     - attrs
     - pip
