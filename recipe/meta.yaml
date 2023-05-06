@@ -17,9 +17,16 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.6.8
+    - python >=3.9
   run:
-    - python >=3.6.8
+    - python >=3.9
+    
+    # Not listed as required but package check to see if available
+    - numpy
+    - lxml
+    - openpyxl
+    - rich
+    - traits
 
 test:
   source_files:
@@ -28,12 +35,13 @@ test:
     - littletable
   commands:
     - pip check
-    - pytest -vvv --capture=tee-sys -k "not TableImportExportTests and not test_sliced_indexing" ./unit_tests.py
+    - pytest -vvv --capture=tee-sys ./unit_tests.py
   requires:
-    - openpyxl
+    - attrs
     - pip
+    - pydantic
     - pytest
-    - rich
+    - traitlets
 
 about:
   home: https://github.com/ptmcg/littletable/
