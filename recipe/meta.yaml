@@ -1,5 +1,5 @@
 {% set name = "littletable" %}
-{% set version = "2.3.1" %}
+{% set version = "2.3.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/littletable-{{ version }}.tar.gz
-  sha256: 04885b0312c111a83be85b767fbba784cfae5fed4f5e831175e307b664d963de
+  sha256: dcd0fc22b3d7af863b0f38e0856d64e28e5c5645cb7da5bf395872515f5c3aba
 
 build:
   noarch: python
