@@ -1,5 +1,5 @@
 {% set name = "littletable" %}
-{% set version = "2.3.2" %}
+{% set version = "2.3.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/littletable-{{ version }}.tar.gz
-  sha256: dcd0fc22b3d7af863b0f38e0856d64e28e5c5645cb7da5bf395872515f5c3aba
+  sha256: e217ee6f14c1d27e44af62f325e90a89133f333e94da8b821aabcbca05c853be
 
 build:
   noarch: python
@@ -20,13 +20,6 @@ requirements:
     - python >=3.9
   run:
     - python >=3.9
-
-    # Not listed as required but package check to see if available
-    - numpy
-    - lxml
-    - openpyxl
-    - rich
-    - traits
 
 test:
   source_files:
