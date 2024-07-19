@@ -21,13 +21,6 @@ requirements:
   run:
     - python >=3.9
 
-    # Not listed as required but package check to see if available
-    - numpy
-    - lxml
-    - openpyxl
-    - rich
-    - traits
-
 test:
   source_files:
     - ./unit_tests.py
